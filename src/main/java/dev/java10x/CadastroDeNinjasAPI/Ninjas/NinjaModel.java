@@ -1,10 +1,13 @@
-package dev.java10x.CadastroDeNinjasAPI.Ninja;
+package dev.java10x.CadastroDeNinjasAPI.Ninjas;
 
 
+import dev.java10x.CadastroDeNinjasAPI.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 // Entity para tornar essa classe em uma entidade no banco de dados
 @Entity
@@ -28,5 +31,9 @@ public class NinjaModel {
 
     @Column(name = "idade")
     private int idade;
+
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+     private MissoesModel missoes;
 
 }
