@@ -7,8 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 // Entity para tornar essa classe em uma entidade no banco de dados
 @Entity
 @Table(name = "tb_cadastro") // Table == name == nomeando a tabela
@@ -32,7 +30,10 @@ public class NinjaModel {
     @Column(name = "idade")
     private int idade;
 
-    @ManyToOne
+    @Column(name = "img_url")
+    private String img_url;
+
+    @ManyToOne // == Um ninja tem uma unica missao
     @JoinColumn(name = "missoes_id")
      private MissoesModel missoes;
 
