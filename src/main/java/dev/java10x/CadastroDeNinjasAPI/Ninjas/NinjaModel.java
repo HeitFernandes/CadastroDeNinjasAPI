@@ -33,6 +33,9 @@ public class NinjaModel {
     @Column(name = "img_url")
     private String img_url;
 
+    @Column(name = "rank")
+    private String rank;
+
     @ManyToOne // == Um ninja tem uma unica missao
     @JoinColumn(name = "missoes_id")
      private MissoesModel missoes;
